@@ -1,31 +1,39 @@
 # Airflow Academy
 
-Learn **airflow mechanics**, CFD, wind tunnels, and supercar aerodynamics (offline, no server).
+Hava akışı, CFD, rüzgar tüneli ve süpercar aerodinamiği — **tek HTML, sunucu gerekmez**.
 
-## On your Mac (no `/home/workdir` — that path is only on the remote build machine)
+## Seçenek 1 — Doğrudan indir (bundle gerekmez)
+
+`main` dalına birleştirilmiş dosya yüklendikten sonra:
+
+```bash
+curl -L -o OPEN-AIRFLOW-ACADEMY.html \
+  "https://raw.githubusercontent.com/egemenbaha/airflow-academy/main/OPEN-AIRFLOW-ACADEMY.html"
+open OPEN-AIRFLOW-ACADEMY.html
+```
+
+Dosya boyutu **~27 KB** olmalı. Çift tıkla veya `open` ile aç.
+
+## Seçenek 2 — Repodan derle
 
 ```bash
 git clone https://github.com/egemenbaha/airflow-academy.git
 cd airflow-academy
+git pull
 python3 bundle.py
-open index.html
+open OPEN-AIRFLOW-ACADEMY.html
 ```
 
-Or double-click **`OPEN-AIRFLOW-ACADEMY.html`** after running `python3 bundle.py`.
+`bundle.py` şunları gerektirir: `css/styles.css`, `js/lessons.js`, `js/simulations.js`, `js/quiz-flow.js` (hepsi repoda).
 
-**No localhost, no Claude Science sign-in required** — the app is a single HTML file with everything inlined.
+## Sorun giderme
 
-## What’s inside
+| Hata | Çözüm |
+|------|--------|
+| `FileNotFoundError: js/simulations.js` | `git pull` — dosya artık repoda |
+| Boş sayfa | `file://` ile küçük `index.html` kullanma; **OPEN-AIRFLOW-ACADEMY.html** veya `bundle.py` sonrası `index.html` (~27 KB) |
+| `lessons.js` boş | `git pull` — tam içerik yüklendi |
 
-- Lessons: continuity, Bernoulli, boundary layers, Navier–Stokes, CFD, supercar case studies
-- **Flow Lab** + **Mechanics labs** (canvas simulations)
-- 15-question quiz
+## İçerik
 
-## Optional dev server
-
-```bash
-python3 -m http.server 8765
-# open http://127.0.0.1:8765/index.html
-```
-
-Serve from the **`airflow-academy`** folder (where `index.html` exists after `bundle.py`).
+- Ders modülleri, Flow Lab, Mechanics labs, 15 soruluk quiz
