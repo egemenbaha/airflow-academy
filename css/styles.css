@@ -4,7 +4,7 @@ body{margin:0;font-family:system-ui,sans-serif;background:#0a0e14;color:#e8edf4;
 .nav button{display:block;width:100%;text-align:left;background:transparent;border:none;color:#8b9cb3;padding:.5rem .7rem;border-radius:8px;cursor:pointer}
 .nav button.active{background:rgba(61,158,255,.2);color:#3d9eff}
 .main{padding:2rem;max-width:900px}
-h2{color:#2ee6c8}
+h1,h2{color:#2ee6c8}
 .card{background:#161d28;border:1px solid #243044;border-radius:12px;padding:1.2rem;margin:1rem 0}
 .formula{font-family:monospace;background:#0d1118;padding:.8rem;border-radius:8px;color:#2ee6c8}
 .lab-panel{border:1px solid #243044;border-radius:12px;overflow:hidden}
@@ -13,8 +13,17 @@ canvas{width:100%;display:block;background:#06080c}
 .quiz-options button{display:block;width:100%;margin:.35rem 0;padding:.65rem;border:1px solid #243044;background:#0a0e14;color:#e8edf4;cursor:pointer;border-radius:8px}
 .sub{font-size:.75rem;color:#8b9cb3}
 .menu-toggle{display:none;position:fixed;top:1rem;left:1rem;z-index:20;background:#161d28;border:1px solid #243044;color:#e8edf4;padding:.45rem .65rem;border-radius:8px;cursor:pointer}
-@media(max-width:800px){.menu-toggle{display:block}.app{grid-template-columns:1fr}.sidebar{position:fixed;transform:translateX(-100%);z-index:10;width:260px;height:100vh}.sidebar.open{transform:none}}
 .nav-group{font-size:.65rem;text-transform:uppercase;letter-spacing:.08em;color:#8b9cb3;padding:.8rem .5rem .2rem}
 .progress-bar{height:4px;background:#243044;margin:1rem 0}
 .progress-bar span{display:block;height:100%;background:linear-gradient(90deg,#3d9eff,#2ee6c8)}
-table.data{width:100%;border-collapse:collapse}table.data td,table.data th{border:1px solid #243044;padding:.5rem;font-size:.9rem}
+.glossary-dl dt{font-weight:600;color:#2ee6c8;margin-top:.8rem}
+.glossary-dl dd{margin:0 0 0 1rem;color:#8b9cb3}
+.lead{font-size:1.15rem;color:#b8c5d6}
+.highlight{border-color:#3d9eff}
+.data{width:100%;border-collapse:collapse;margin:1rem 0}
+.data th,.data td{border:1px solid #243044;padding:.5rem}
+.sim-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}
+.quiz-score{font-size:1.4rem;color:#2ee6c8}
+.quiz-options button.correct{border-color:#2ee6c8;background:rgba(46,230,200,.15)}
+.quiz-options button.wrong{border-color:#ff6b6b}
+@media(max-width:800px){.menu-toggle{display:block}.app{grid-template-columns:1fr}.sidebar{position:fixed;left:-280px;transition:.2s;z-index:10;width:260px;height:100vh}.sidebar.open{left:0}}
