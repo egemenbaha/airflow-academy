@@ -1,21 +1,31 @@
 # Airflow Academy
 
-Interactive course: airflow mechanics, CFD, wind tunnels, supercar aero.
+Learn **airflow mechanics**, CFD, wind tunnels, and supercar aerodynamics (offline, no server).
 
-## Run locally
+## On your Mac (no `/home/workdir` — that path is only on the remote build machine)
+
 ```bash
+git clone https://github.com/egemenbaha/airflow-academy.git
 cd airflow-academy
-python3 -m http.server 8080
+python3 bundle.py
+open index.html
 ```
-Open http://localhost:8080
 
-## Deploy
-Import the repo in [Vercel](https://vercel.com) as a static site (root `index.html`).
+Or double-click **`OPEN-AIRFLOW-ACADEMY.html`** after running `python3 bundle.py`.
 
-## Modules
-- Fundamentals: continuity, Bernoulli, boundary layer
-- Forces: drag, downforce, Cd/Cl
-- Engineering: CFD + wind tunnel
-- Case studies: SF90, Revuelto, P1, Chiron
-- Flow Lab (canvas simulation)
-- 10-question quiz
+**No localhost, no Claude Science sign-in required** — the app is a single HTML file with everything inlined.
+
+## What’s inside
+
+- Lessons: continuity, Bernoulli, boundary layers, Navier–Stokes, CFD, supercar case studies
+- **Flow Lab** + **Mechanics labs** (canvas simulations)
+- 15-question quiz
+
+## Optional dev server
+
+```bash
+python3 -m http.server 8765
+# open http://127.0.0.1:8765/index.html
+```
+
+Serve from the **`airflow-academy`** folder (where `index.html` exists after `bundle.py`).
